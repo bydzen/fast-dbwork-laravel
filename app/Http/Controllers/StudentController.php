@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\StudentModel;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -16,12 +16,12 @@ class StudentController extends Controller
         $keyword = $request->keyword;
         $row = 4;
         if (strlen($keyword)) {
-            $data = StudentModel::where('id', 'like', "%$keyword%")
+            $data = Student::where('id', 'like', "%$keyword%")
                 ->orWhere('name', 'like', "%$keyword%")
                 ->orWhere('department', 'like', "%$keyword%")
                 ->paginate($row);
         } else {
-            $data = StudentModel::orderBy('id', 'desc')->paginate($row);
+            $data = Student::orderBy('id', 'desc')->paginate($row);
         }
         return view('student.index')->with('data', $data);
     }
@@ -61,7 +61,7 @@ class StudentController extends Controller
             'department' => $request->department,
         ];
 
-        StudentModel::create($data);
+        Student::create($data);
         return redirect()->to('student')->with('success', 'Data added!');
     }
 
@@ -78,7 +78,7 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        $data = StudentModel::where('id', $id)->first();
+        $data = Student::where('id', $id)->first();
         return view('student.edit')->with('data', $data);
     }
 
@@ -98,7 +98,7 @@ class StudentController extends Controller
             'name' => $request->name,
             'department' => $request->department,
         ];
-        StudentModel::where('id', $id)->update($data);
+        Student::where('id', $id)->update($data);
         return redirect()->to('student')->with('success', 'Data updated!');
     }
 
@@ -107,7 +107,7 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        StudentModel::where('id', $id)->delete();
+        Student::where('id', $id)->delete();
         return redirect()->to('student')->with('success', 'Data deleted!');
     }
 }
