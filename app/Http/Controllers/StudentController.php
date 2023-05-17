@@ -70,7 +70,8 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Student::where('id', $id)->first();
+        return view('student.show')->with('data', $data);
     }
 
     /**
