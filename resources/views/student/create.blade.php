@@ -7,19 +7,19 @@
             <div class="mb-3 row">
                 <label for="id" class="col-sm-2 col-form-label">ID</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" name='id' id="id">
+                    <input type="number" class="form-control" name='id' id="id" placeholder="E.g. 1303195210">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name='name' id="name">
+                    <input type="text" class="form-control" name='name' id="name" placeholder="E.g. Budi Darmawan">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="department" class="col-sm-2 col-form-label">Department</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name='department' id="department">
+                    <input type="text" class="form-control" name='department' id="department" placeholder="E.g. S1 Sistem Informasi">
                 </div>
             </div>
             <div class="mb-3 row">
