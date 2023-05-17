@@ -32,6 +32,7 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->department }}</td>
                         <td>
+                            <a href='{{ url('student/' . $item->id) }}' class="btn btn-primary btn-sm">Show</a>
                             <a href='{{ url('student/' . $item->id . '/edit') }}' class="btn btn-warning btn-sm">Edit</a>
                             <form onsubmit="return confirm('Delete data?')" action="{{ url('student/' . $item->id) }}"
                                 class="d-inline" method="POST">
