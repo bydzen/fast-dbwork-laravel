@@ -21,7 +21,7 @@ class StudentController extends Controller
                 ->orWhere('department', 'like', "%$keyword%")
                 ->paginate($row);
         } else {
-            $data = Student::orderBy('id', 'desc')->paginate($row);
+            $data = Student::orderBy('id', 'asc')->paginate($row);
         }
         return view('student.index')->with('data', $data);
     }
