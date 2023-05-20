@@ -23,11 +23,11 @@
             </thead>
             <tbody>
                 @php
-                    $i = $data->firstItem();
+                    $no = $data->firstItem();
                 @endphp
                 @foreach ($data as $item)
                     <tr>
-                        <td>{{ $i }}</td>
+                        <td>{{ $no }}</td>
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->department }}</td>
@@ -43,7 +43,7 @@
                         </td>
                     </tr>
                     @php
-                        $i++;
+                        $no++;
                     @endphp
                 @endforeach
             </tbody>
