@@ -62,7 +62,7 @@ class StudentController extends Controller
         ];
 
         Student::create($data);
-        return redirect()->to('student')->with('success', 'Data added!');
+        return redirect()->to('student')->with('success', 'Data added successfully!');
     }
 
     /**
@@ -100,7 +100,7 @@ class StudentController extends Controller
             'department' => $request->department,
         ];
         Student::where('id', $id)->update($data);
-        return redirect()->to('student')->with('success', 'Data updated!');
+        return redirect()->to('student')->with('success', 'Data updated successfully!');
     }
 
     /**
@@ -109,6 +109,6 @@ class StudentController extends Controller
     public function destroy(string $id)
     {
         Student::where('id', $id)->delete();
-        return redirect()->to('student')->with('success', 'Data deleted!');
+        return redirect()->to('student')->with('success', 'Data deleted! successfully');
     }
 }
